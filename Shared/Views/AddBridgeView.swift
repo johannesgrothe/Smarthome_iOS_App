@@ -15,10 +15,12 @@ struct AddBridgeView: View {
     @State private var password: String = ""
     
     @Environment(\.presentationMode) var presentationMode
+    @Environment(\.managedObjectContext) var viewContext
     
-    @Environment(\.managedObjectContext) private var viewContext
+    private let bridge_manager: BridgeManager = .shared
     
     var body: some View {
+
         HStack {
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
@@ -27,16 +29,8 @@ struct AddBridgeView: View {
             })
             Button(action: {
                 self.presentationMode.wrappedValue.dismiss()
-                let newBridge = BridgeCredentials(context: viewContext)
-                newBridge.address = address
-                newBridge.password = password
-                newBridge.username = username
-                do {
-                    try viewContext.save()
-                } catch {
-                    let nsError = error as NSError
-                    fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-                }
+                
+                bridge_manager.createBridge(viewContext: self.viewContext, address: self.address, password: self.password, username: self.username)
             }, label: {
                 Text("save")
             })
@@ -47,20 +41,20 @@ struct AddBridgeView: View {
                 "Bridge Address/Ip",
                 text: $address
             )
-//                .autocapitalization(.none)
+                .autocapitalization(.none)
                 .disableAutocorrection(true)
-            //            .border(Color(UIColor.separator))
+                .border(Color(UIColor.separator))
             TextField(
                 "Username",
                 text: $username
             )
-//                .autocapitalization(.none)
+                .autocapitalization(.none)
                 .disableAutocorrection(true)
             SecureField(
                 "Password",
                 text: $password
             )
-//                .autocapitalization(.none)
+                .autocapitalization(.none)
                 .disableAutocorrection(true)
         }
         Spacer()
