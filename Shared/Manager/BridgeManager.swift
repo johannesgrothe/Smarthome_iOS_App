@@ -13,13 +13,15 @@ struct BridgeManager {
     
     public static func requestBridgeCredentials() -> NSFetchRequest<BridgeCredentials> {
         let request: NSFetchRequest<BridgeCredentials> = BridgeCredentials.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "address", ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(key: "ip", ascending: true)]
         return request
     }
     
-    public func createBridge(viewContext: NSManagedObjectContext, address: String, password: String, username: String){
+    public func createBridge(viewContext: NSManagedObjectContext, name: String, ip: String, port: String, password: String, username: String){
         let newBridge = BridgeCredentials(context: viewContext)
-            newBridge.address = address
+            newBridge.name = name
+            newBridge.ip = ip
+            newBridge.port = port
             newBridge.password = password
             newBridge.username = username
             PersistenceController.shared.save()

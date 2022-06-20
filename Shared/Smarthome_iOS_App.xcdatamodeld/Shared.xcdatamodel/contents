@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="BridgeCredentials" representedClassName="BridgeCredentials" syncable="YES" codeGenerationType="class">
-        <attribute name="address" optional="YES" attributeType="String"/>
+        <attribute name="ip" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
+        <attribute name="port" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
     <elements>
-        <element name="BridgeCredentials" positionX="-63" positionY="-9" width="128" height="74"/>
+        <element name="BridgeCredentials" positionX="-63" positionY="-9" width="128" height="104"/>
         <element name="Item" positionX="-63" positionY="-18" width="128" height="44"/>
     </elements>
 </model>

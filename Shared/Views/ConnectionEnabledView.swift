@@ -8,8 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct EmptyView: View {
+struct ConnectionEnabledView: View {
     var body: some View {
-        Text("DU PISSER")
+        Text("Connected")
     }
 }
