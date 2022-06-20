@@ -22,7 +22,7 @@ struct BridgeOverviewView: View {
 
         List{
             ForEach(bridge_credentials) { bridge_data in
-                NavigationLink(destination: ConnectionEnabledView()) {
+                NavigationLink(destination: ConnectionEnabledView(bridge_data: bridge_data)) {
                     VStack(alignment: .leading){
                         Text(bridge_data.name!)
                         Text(bridge_data.ip! + ":" + bridge_data.port!)
