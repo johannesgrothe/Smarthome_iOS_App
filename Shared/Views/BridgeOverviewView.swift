@@ -11,12 +11,12 @@ import CoreData
 
 struct BridgeOverviewView: View {
     
-    @State private var show_add_bridge_view = false
+    @State private var show_add_bridge_view: Bool = false
     
     private let bridge_manager: BridgeManager = .shared
     
-    @FetchRequest(fetchRequest: BridgeManager.requestBridgeCredentials())
-    var bridge_credentials: FetchedResults<BridgeCredentials>
+    @FetchRequest(fetchRequest: BridgeManager.requestBridgeInfoContainers())
+    var bridge_credentials: FetchedResults<BridgeInfoContainer>
     
     var body: some View {
 
@@ -25,7 +25,7 @@ struct BridgeOverviewView: View {
                 NavigationLink(destination: ConnectionEnabledView(bridge_data: bridge_data)) {
                     VStack(alignment: .leading){
                         Text(bridge_data.name!)
-                        Text(bridge_data.ip! + ":" + bridge_data.port!)
+                            .font(Font.headline.weight(.bold))
                     }
                 }
             }

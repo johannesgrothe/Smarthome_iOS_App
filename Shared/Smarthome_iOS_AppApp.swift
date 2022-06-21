@@ -21,14 +21,14 @@ struct Smarthome_iOS_AppApp: App {
         .onChange(of: scenePhase) { (newScenePhase) in
             switch newScenePhase {
             case .background:
-                print("App is running in Background save() called")
+                print("App is running in Background save() called.")
                 persistenceController.save()
             case .inactive:
-                print("App is inactive")
+                print("App is inactive.")
             case .active:
-                print("App is active")
+                print("App is active.")
             @unknown default:
-                print("I dont know, ask the Wizard")
+                print("App status is unspecified. Do not know '\(newScenePhase)'.")
             }
         }
     }

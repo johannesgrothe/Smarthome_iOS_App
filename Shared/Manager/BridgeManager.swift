@@ -11,14 +11,14 @@ import CoreData
 struct BridgeManager {
     static let shared = BridgeManager()
     
-    public static func requestBridgeCredentials() -> NSFetchRequest<BridgeCredentials> {
-        let request: NSFetchRequest<BridgeCredentials> = BridgeCredentials.fetchRequest()
-        request.sortDescriptors = [NSSortDescriptor(key: "ip", ascending: true)]
+    public static func requestBridgeInfoContainers() -> NSFetchRequest<BridgeInfoContainer> {
+        let request: NSFetchRequest<BridgeInfoContainer> = BridgeInfoContainer.fetchRequest()
+        request.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         return request
     }
     
-    public func createBridge(viewContext: NSManagedObjectContext, name: String, ip: String, port: String, password: String, username: String){
-        let newBridge = BridgeCredentials(context: viewContext)
+    public func createBridge(viewContext: NSManagedObjectContext, name: String, ip: String, port: Int16, password: String, username: String){
+        let newBridge = BridgeInfoContainer(context: viewContext)
             newBridge.name = name
             newBridge.ip = ip
             newBridge.port = port
@@ -27,7 +27,7 @@ struct BridgeManager {
             PersistenceController.shared.save()
     }
     
-    public func deleteBridge(bridge: BridgeCredentials) {
+    public func deleteBridge(bridge: BridgeInfoContainer) {
         PersistenceController.shared.delete(bridge)
         PersistenceController.shared.save()
     }

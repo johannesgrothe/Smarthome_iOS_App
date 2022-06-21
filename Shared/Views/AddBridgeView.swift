@@ -9,17 +9,32 @@ import Foundation
 import SwiftUI
 import CoreData
 
-struct AddBridgeView: View {
-    @State private var name: String = ""
-    @State private var ip: String = ""
-    @State private var port: String = ""
-    @State private var username: String = ""
-    @State private var password: String = ""
+class NumFieldString: ObservableObject {
+    @Published var value = "" {
+        didSet {
+            let filtered = value.filter { $0.isNumber }
+                        
+            if value != filtered {
+                value = filtered
+            }
+        }
+    }
     
+    func getAsNum() -> Int16 {
+        return Int16(value) ?? 0
+    }
+}
+
+struct AddBridgeView: View {
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.managedObjectContext) var viewContext
     
     private let bridge_manager: BridgeManager = .shared
+    @State private var name: String = ""
+    @State private var ip: String = ""
+    @State private var port: NumFieldString = NumFieldString()
+    @State private var username: String = ""
+    @State private var password: String = ""
     
     var body: some View {
         NavigationView {
@@ -38,10 +53,11 @@ struct AddBridgeView: View {
                         .disableAutocorrection(true)
                     TextField(
                         "Bridge Port",
-                        text: $port
+                        text: $port.value
                     )
                         .autocapitalization(.none)
                         .disableAutocorrection(true)
+                        .keyboardType(.decimalPad)
                 }
                 
                 Section(header: Text("Authentication Details")) {
@@ -67,9 +83,11 @@ struct AddBridgeView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
+                        let port: Int16 = port.getAsNum()
+                        
                         self.presentationMode.wrappedValue.dismiss()
 
-                        bridge_manager.createBridge(viewContext: self.viewContext, name: self.name, ip: self.ip, port: self.port, password: self.password, username: self.username)
+                        bridge_manager.createBridge(viewContext: self.viewContext, name: self.name, ip: self.ip, port: port, password: self.password, username: self.username)
                     }
                 }
             }
