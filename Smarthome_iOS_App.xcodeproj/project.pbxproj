@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E38CFA927106E7C00BE971E /* ConnectionEnabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E38CFA827106E7C00BE971E /* ConnectionEnabledView.swift */; };
+		4E38CFAA27106E7C00BE971E /* ConnectionEnabledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E38CFA827106E7C00BE971E /* ConnectionEnabledView.swift */; };
+		4EB3EF49270EE6120061CF11 /* BridgeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EB3EF48270EE6110061CF11 /* BridgeManager.swift */; };
 		4ED352EC27021C3B007E53A2 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED352EB27021C3B007E53A2 /* Tests_iOS.swift */; };
 		4ED352EE27021C3B007E53A2 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED352ED27021C3B007E53A2 /* Tests_iOSLaunchTests.swift */; };
 		4ED352F827021C3B007E53A2 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED352F727021C3B007E53A2 /* Tests_macOS.swift */; };
@@ -23,8 +26,6 @@
 		4ED3530427021C3B007E53A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED352D527021C3B007E53A2 /* Assets.xcassets */; };
 		4ED3531427021E8E007E53A2 /* BridgeOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3531327021E8E007E53A2 /* BridgeOverviewView.swift */; };
 		4ED3531527021E8E007E53A2 /* BridgeOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3531327021E8E007E53A2 /* BridgeOverviewView.swift */; };
-		4ED3531727022689007E53A2 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3531627022689007E53A2 /* EmptyView.swift */; };
-		4ED3531827022689007E53A2 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3531627022689007E53A2 /* EmptyView.swift */; };
 		4ED3531A27022BE1007E53A2 /* AddBridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3531927022BE1007E53A2 /* AddBridgeView.swift */; };
 		4ED3531B27022BE1007E53A2 /* AddBridgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED3531927022BE1007E53A2 /* AddBridgeView.swift */; };
 /* End PBXBuildFile section */
@@ -47,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E38CFA827106E7C00BE971E /* ConnectionEnabledView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionEnabledView.swift; sourceTree = "<group>"; };
+		4EB3EF48270EE6110061CF11 /* BridgeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeManager.swift; sourceTree = "<group>"; };
 		4ED352D127021C38007E53A2 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		4ED352D227021C38007E53A2 /* Smarthome_iOS_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Smarthome_iOS_AppApp.swift; sourceTree = "<group>"; };
 		4ED352D327021C38007E53A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -62,7 +65,6 @@
 		4ED352F727021C3B007E53A2 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		4ED352F927021C3B007E53A2 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
 		4ED3531327021E8E007E53A2 /* BridgeOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeOverviewView.swift; sourceTree = "<group>"; };
-		4ED3531627022689007E53A2 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		4ED3531927022BE1007E53A2 /* AddBridgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBridgeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E38CFAB271075CE00BE971E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				4EB3EF48270EE6110061CF11 /* BridgeManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		4E38CFAC271075DB00BE971E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E38CFA827106E7C00BE971E /* ConnectionEnabledView.swift */,
+				4ED3531927022BE1007E53A2 /* AddBridgeView.swift */,
+				4ED3531327021E8E007E53A2 /* BridgeOverviewView.swift */,
+				4ED352D327021C38007E53A2 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		4ED352CA27021C38007E53A2 = {
 			isa = PBXGroup;
 			children = (
@@ -112,14 +133,12 @@
 		4ED352CF27021C38007E53A2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				4E38CFAC271075DB00BE971E /* Views */,
+				4E38CFAB271075CE00BE971E /* Manager */,
 				4ED352D227021C38007E53A2 /* Smarthome_iOS_AppApp.swift */,
-				4ED352D327021C38007E53A2 /* ContentView.swift */,
 				4ED352D427021C38007E53A2 /* Persistence.swift */,
 				4ED352D527021C3B007E53A2 /* Assets.xcassets */,
 				4ED352D027021C38007E53A2 /* Smarthome_iOS_App.xcdatamodeld */,
-				4ED3531327021E8E007E53A2 /* BridgeOverviewView.swift */,
-				4ED3531627022689007E53A2 /* EmptyView.swift */,
-				4ED3531927022BE1007E53A2 /* AddBridgeView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -323,8 +342,9 @@
 				4ED3531A27022BE1007E53A2 /* AddBridgeView.swift in Sources */,
 				4ED352FD27021C3B007E53A2 /* Smarthome_iOS_AppApp.swift in Sources */,
 				4ED3530127021C3B007E53A2 /* Persistence.swift in Sources */,
+				4E38CFA927106E7C00BE971E /* ConnectionEnabledView.swift in Sources */,
 				4ED352FB27021C3B007E53A2 /* Smarthome_iOS_App.xcdatamodeld in Sources */,
-				4ED3531727022689007E53A2 /* EmptyView.swift in Sources */,
+				4EB3EF49270EE6120061CF11 /* BridgeManager.swift in Sources */,
 				4ED352FF27021C3B007E53A2 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -338,7 +358,7 @@
 				4ED352FE27021C3B007E53A2 /* Smarthome_iOS_AppApp.swift in Sources */,
 				4ED3530227021C3B007E53A2 /* Persistence.swift in Sources */,
 				4ED352FC27021C3B007E53A2 /* Smarthome_iOS_App.xcdatamodeld in Sources */,
-				4ED3531827022689007E53A2 /* EmptyView.swift in Sources */,
+				4E38CFAA27106E7C00BE971E /* ConnectionEnabledView.swift in Sources */,
 				4ED3530027021C3B007E53A2 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
