@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 
+@available(iOS 15.0, *)
 struct ContentView: View {
 
     var body: some View {

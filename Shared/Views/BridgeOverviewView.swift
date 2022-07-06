@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import CoreData
 
+@available(iOS 15.0, *)
 struct BridgeOverviewView: View {
     
     @State private var show_add_bridge_view: Bool = false
